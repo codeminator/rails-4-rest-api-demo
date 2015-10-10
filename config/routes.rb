@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  devise_for :users
   #-----API versioning
   api vendor_string: ENV['API_VENDOR'],
       default_version: ENV['API_DEFUALT_VERSION'],

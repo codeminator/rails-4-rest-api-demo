@@ -31,7 +31,15 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.10)
     builder (3.2.2)
+    devise (3.5.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
@@ -50,6 +58,7 @@ GEM
     minitest (5.8.1)
     multi_json (1.11.2)
     mysql2 (0.3.18)
+    orm_adapter (0.5.0)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -69,6 +78,8 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     rspec-core (3.3.2)
       rspec-support (~> 3.3.0)
     rspec-expectations (3.3.1)
@@ -100,12 +111,15 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   api-versions
+  devise
   dotenv-rails
   fabrication
   faker
