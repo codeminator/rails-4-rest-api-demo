@@ -4,6 +4,7 @@ ruby '2.1.5'
 gem 'rails', '4.1.8'
 
 gem 'mysql2', '~> 0.3.18'					# Use mysql as the database for Active Record
+gem 'dotenv-rails'								# Create Environment variables for sensitive information (i.e: DB credentials)
 
 group :test do
   gem 'rspec-rails'               # Handles testing
