@@ -46,6 +46,8 @@ GEM
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
       railties (~> 4.0)
+    enumerize (0.8.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     fabrication (2.14.1)
     faker (1.5.0)
@@ -127,6 +129,7 @@ DEPENDENCIES
   cancancan (~> 1.10)
   devise
   dotenv-rails
+  enumerize
   fabrication
   faker
   mysql2 (~> 0.3.18)
