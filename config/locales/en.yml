@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  unauthorized:
+    default: "Access denied"
+    manage:
+      all: "Not authorized to %{action} %{subject}."
+      activity: "Not allowed to manage other users' activities."
+      venue: "Not allowed to manage other users' venues."
+    update:
+      activity: "Not allowed to update this activity."
+      venue: "Not allowed to update this venue."
+    destroy:
+      activity: "Not allowed to delete this activity."
+      venue: "Not allowed to delete this venue."
+
