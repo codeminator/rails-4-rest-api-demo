@@ -34,6 +34,7 @@ GEM
     bcrypt (3.1.10)
     builder (3.2.2)
     cancancan (1.10.1)
+    configatron (4.5.0)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -127,6 +128,7 @@ PLATFORMS
 DEPENDENCIES
   api-versions
   cancancan (~> 1.10)
+  configatron
   devise
   dotenv-rails
   enumerize

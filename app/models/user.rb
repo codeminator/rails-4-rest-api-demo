@@ -8,7 +8,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   #-----Attributes
-  enumerize :role, in: [:admin, :user], default: :user
+  #Check config/configatron/defaults.rb to know about available_roles
+  enumerize :role, in: configatron.models.user.available_roles, default: :guest
+
+  #-----Assiciations
+  has_many :venues, foreign_key: :created_by, dependent: :destroy
+  has_many :activities
 
   #-----Methods
   def is?(role_name)

@@ -5,7 +5,7 @@ RESTful API, secured with basic authentication &amp; role-based access limitatio
 
 ### A simple Project that enables users to do the following (based on roles & privileges granted):
 
-- CRUD for a Running activity (distance, activity venue in which this activity took place).
+- CRUD for an activity (name -running || swimming || racing-, distance, activity venue in which this activity took place).
 - CRUD for an Activity Venue (name, longitude, latitude).
 
 ### Roles & privileges:

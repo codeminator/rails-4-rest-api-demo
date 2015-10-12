@@ -10,6 +10,7 @@ gem 'devise'											# Flexible authentication solution for Rails
 gem 'simple_token_authentication', '~> 1.0' # Simple token authentication that works with devise
 gem 'cancancan', '~> 1.10'				# Handles user's role-based authorization
 gem 'enumerize'                   # Enumirated attributes
+gem 'configatron'									# App-wide config variables
 
 group :test do
   gem 'rspec-rails'               # Handles testing

@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011002036) do
+ActiveRecord::Schema.define(version: 20151012020345) do
+
+  create_table "activities", force: true do |t|
+    t.string   "name"
+    t.float    "distance",     limit: 24
+    t.integer  "venue_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "measure_unit"
+  end
+
+  add_index "activities", ["measure_unit"], name: "index_activities_on_measure_unit", using: :btree
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
+  add_index "activities", ["venue_id"], name: "index_activities_on_venue_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -34,5 +48,14 @@ ActiveRecord::Schema.define(version: 20151011002036) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["role"], name: "index_users_on_role", using: :btree
+
+  create_table "venues", force: true do |t|
+    t.string   "name"
+    t.integer  "created_by"
+    t.decimal  "latitude",   precision: 15, scale: 10
+    t.decimal  "longitude",  precision: 15, scale: 10
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
