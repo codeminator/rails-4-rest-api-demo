@@ -45,27 +45,27 @@ describe User, type: :model do
   end
 
   describe 'methods' do
-  	describe '#is?' do
-  		it 'return true if correct user role supplied' do
+    describe '#is?' do
+      it 'return true if correct user role supplied' do
         expect(@guest.is?(:guest)).to be true
-  			expect(@user.is?(:user)).to be true
-  			expect(@admin.is?(:admin)).to be true
-  		end
+        expect(@user.is?(:user)).to be true
+        expect(@admin.is?(:admin)).to be true
+      end
 
-  		it 'return false if non-correct user role supplied' do
+      it 'return false if non-correct user role supplied' do
         expect(@guest.is?(:user)).to be false
-  			expect(@admin.is?(:user)).to be false
-  			expect(@user.is?(:admin)).to be false
-  		end
-  	end
+        expect(@admin.is?(:user)).to be false
+        expect(@user.is?(:admin)).to be false
+      end
+    end
   end
 
   describe 'validations' do
-  	it "role inclusion in (#{configatron.models.user.available_roles.join(', ')})" do
-  		expect{Fabricate(:user, role: 'dummy')}.to raise_error(ActiveRecord::RecordInvalid)
+    it "role inclusion in (#{configatron.models.user.available_roles.join(', ')})" do
+      expect{Fabricate(:user, role: 'dummy')}.to raise_error(ActiveRecord::RecordInvalid)
       expect(@guest).to be_valid
-  		expect(@user).to be_valid
-  		expect(@admin).to be_valid
-  	end
+      expect(@user).to be_valid
+      expect(@admin).to be_valid
+    end
   end
 end

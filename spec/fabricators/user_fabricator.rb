@@ -4,9 +4,9 @@ Fabricator(:user, aliases: [:guest]) do
 end
 
 Fabricator(:normal_user, from: :guest) do
-	role					'user'
+  role           'user'
 end
 
 Fabricator(:admin_user, from: :user) do
-  role          'admin'
+  role           'admin'
 end
