@@ -23,10 +23,10 @@ puts "----------Accept => application/vnd.#{ENV['API_VENDOR']}+json;version=#{EN
   'user' => normal_user,
   'guest' => guest_user
 }.each do |identifier, usr_object|
-  puts "----------For #{identifier.humanize} :"
+  puts "-------For #{identifier.humanize} :"
   puts "----------#{ENV['EMAIL_HEADER']} => #{usr_object.email}"
   puts "----------#{ENV['AUTHENTICATION_TOKEN_HEADER']} => #{usr_object.authentication_token}"
-  puts "****************************************************************************************************"
+  puts ""
 end
 
 puts "****************************************************************************************************"
