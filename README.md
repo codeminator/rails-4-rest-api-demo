@@ -115,7 +115,7 @@ List all activities, with pagination of default page=1 & per_page=10 (maximum al
      - venue[longitude] #Mandatory (between-180, 180)
      - venue[latitude] #Mandatory (between -90, 90)
 ```
- - DELETE /activity/:id
+ - DELETE /venue/:id
 ```
 
             
