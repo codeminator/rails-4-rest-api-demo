@@ -148,7 +148,7 @@ describe Api::V1::ActivitiesController, type: :request do
       end
 
       it 'cannot update others activities' do
-        activity = Fabricate(:activity, user: Fabricate(:user))
+        activity = Fabricate(:activity, user: Fabricate(:user), distance: @new_attributes[:distance] + 5)
         put api_activity_path(activity), {
           user_token: @user.authentication_token,
           user_email: @user.email,
