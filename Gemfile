@@ -11,6 +11,10 @@ gem 'simple_token_authentication', '~> 1.0' # Simple token authentication that w
 gem 'cancancan', '~> 1.10'        # Handles user's role-based authorization
 gem 'enumerize'                   # Enumirated attributes
 gem 'configatron'                 # App-wide config variables
+gem 'dalli'                       # caching client
+gem 'jbuilder', '~> 2.0'          # Build JSON APIs with ease
+gem 'jbuilder_cache_multi'        # Caching jbuilder collections
+gem 'will_paginate', '~> 3.0.6'   # Records pagination
 
 group :test do
   gem 'rspec-rails'               # Handles testing

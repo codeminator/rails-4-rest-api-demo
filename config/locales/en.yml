@@ -26,6 +26,10 @@ en:
       all: "Not authorized to %{action} %{subject}."
       activity: "Not allowed to manage other users' activities."
       venue: "Not allowed to manage other users' venues."
+    create:
+      all: "Not authorized to %{action} %{subject}."
+      activity: "Not allowed to create activity."
+      venue: "Not allowed to create venue"
     update:
       activity: "Not allowed to update this activity."
       venue: "Not allowed to update this venue."

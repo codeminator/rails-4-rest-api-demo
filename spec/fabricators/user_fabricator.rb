@@ -1,12 +1,13 @@
-Fabricator(:user, aliases: [:guest]) do
+Fabricator(:user) do
   email         { Faker::Internet.email }
   password      { Faker::Lorem.characters(10) }
+  role          'user'
 end
 
-Fabricator(:normal_user, from: :guest) do
-  role           'user'
+Fabricator(:guest, from: :user) do
+  role           'guest'
 end
 
-Fabricator(:admin_user, from: :user) do
+Fabricator(:admin, from: :user) do
   role           'admin'
 end

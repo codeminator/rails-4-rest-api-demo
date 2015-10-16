@@ -7,8 +7,11 @@ Rails.application.routes.draw do
       path: '' do
     version 1 do
       cache as: 'v1' do
-        
+        resources :activities
+        resources :venues
       end
     end
   end
+  # catch 404 error
+  match "*path", to: -> (env) { [404, {}, ['{"errors": "Resource not found"}']] }, via: :all
 end

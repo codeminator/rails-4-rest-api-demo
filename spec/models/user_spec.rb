@@ -3,8 +3,8 @@ require 'cancan/matchers'
 describe User, type: :model do
   before do
     @guest = Fabricate(:guest)
-    @user = Fabricate(:normal_user)
-    @admin = Fabricate(:admin_user)
+    @user = Fabricate(:user)
+    @admin = Fabricate(:admin)
   end
 
   describe 'abilities' do
@@ -12,34 +12,34 @@ describe User, type: :model do
 
     context 'when is a guest' do
       let(:user) { @guest }
-      it { should be_able_to(:read, :all) }
-      it { should_not be_able_to(:create, Activity.new) }
-      it { should_not be_able_to(:create, Venue.new) }
+      it { is_expected.to be_able_to(:read, :all) }
+      it { is_expected.to_not be_able_to(:create, Activity.new) }
+      it { is_expected.to_not be_able_to(:create, Venue.new) }
       [:update, :destroy].each do |action|
-        it { should_not be_able_to(action, Activity.new(user: @user)) }
-        it { should_not be_able_to(action, Venue.new(creator: @user)) }
+        it { is_expected.to_not be_able_to(action, Activity.new(user: @user)) }
+        it { is_expected.to_not be_able_to(action, Venue.new(creator: @user)) }
       end
     end
 
     context 'when is a normal user' do
       let(:user) { @user }
-      it { should be_able_to(:read, :all) }
-      it { should be_able_to(:create, :all) }
+      it { is_expected.to be_able_to(:read, :all) }
+      it { is_expected.to be_able_to(:create, :all) }
       #activity
-      it { should be_able_to(:update, Activity.new(user: user)) }
-      it { should be_able_to(:destroy, Activity.new(user: user)) }
-      it { should_not be_able_to(:update, Activity.new(user: Fabricate(:normal_user))) }
-      it { should_not be_able_to(:destroy, Activity.new(user: Fabricate(:normal_user))) }
+      it { is_expected.to be_able_to(:update, Activity.new(user: user)) }
+      it { is_expected.to be_able_to(:destroy, Activity.new(user: user)) }
+      it { is_expected.to_not be_able_to(:update, Activity.new(user: Fabricate(:user))) }
+      it { is_expected.to_not be_able_to(:destroy, Activity.new(user: Fabricate(:user))) }
       #venue
-      it { should be_able_to(:update, Venue.new(creator: user)) }
-      it { should be_able_to(:destroy, Venue.new(creator: user)) }
-      it { should_not be_able_to(:update, Venue.new(creator: Fabricate(:normal_user))) }
-      it { should_not be_able_to(:destroy, Venue.new(creator: Fabricate(:normal_user))) }
+      it { is_expected.to be_able_to(:update, Venue.new(creator: user)) }
+      it { is_expected.to be_able_to(:destroy, Venue.new(creator: user)) }
+      it { is_expected.to_not be_able_to(:update, Venue.new(creator: Fabricate(:user))) }
+      it { is_expected.to_not be_able_to(:destroy, Venue.new(creator: Fabricate(:user))) }
     end
 
     context 'when is an admin' do
       let(:user) { @admin }
-      it { should be_able_to(:manage, :all) }
+      it { is_expected.to be_able_to(:manage, :all) }
     end
 
   end
